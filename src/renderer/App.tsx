@@ -1,50 +1,32 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavbarController from "../components/NavbarController";
+import Profile from "pages/Profile";
+import RegisterSuccess from "pages/RegisterSuccess";
+import Customer from "pages/Customer";
+import CreateCustomer from "pages/CreateCustomer";
+import Login from "pages/Login";
+import Register from "pages/Register";
+import NewCustomerSuccess from "pages/NewCustomerSuccess";
 
-function Hello() {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
-    </div>
-  );
-}
+
+
+
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
+    <BrowserRouter>
+    <NavbarController/>
+      <div style={{ marginLeft: "5%", marginRight: "5%", marginTop: "3%" }}>
+        <Routes>
+          <Route path="/" element={<Profile />}/>
+          <Route path="/registerSuccess" element={<RegisterSuccess />} />
+          <Route path="/customer" element={<Customer />} />
+          <Route path="/customer/create" element={<CreateCustomer test={undefined} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/customer/create/success" element={<NewCustomerSuccess/>}/>
+        </Routes>
+      </div>
+  </BrowserRouter>
   );
 }
