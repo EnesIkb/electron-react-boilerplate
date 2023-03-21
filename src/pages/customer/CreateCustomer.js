@@ -10,11 +10,11 @@ import { useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import StepWizard from "react-step-wizard";
+
 
 const CreateCustomer = ({ test }) => {
-  const [isValid, setValid] = useState(false);
-  const [token, setToken] = useState('');
-  const location = useLocation();
+
 
   let decoded;
 
@@ -24,6 +24,11 @@ const CreateCustomer = ({ test }) => {
     firstName: '',
     lastName: '',
     street: '',
+    plz:'',
+    place:'',
+    phoneNumber:'',
+    mobileNumber:'',
+    email:'', 
     username: '',
     nameOfWorkshop: '',
   });
@@ -85,12 +90,16 @@ const CreateCustomer = ({ test }) => {
       });
   }
 
+  const values = [true];
+
+
+
   return (
     <Form style={{ marginLeft: '20%', marginRight: '20%', marginTop: '3%' }}>
-      <h2>Kunden erstellen</h2>
+
 
       <Container>
-        <Row style={{backgroundColor:"grey"}}>
+        <Row >
           <Col>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Kundennummer</Form.Label>
@@ -201,11 +210,11 @@ const CreateCustomer = ({ test }) => {
                   onChange={(e) => {
                     user[0].lastName = e.target.value;
                   }}
-                />
+                />‚
               </FormGroup>
             </Col>
           </Row>
-          
+        
         </Row>
       </Container>
 
@@ -214,7 +223,7 @@ const CreateCustomer = ({ test }) => {
         style={{ marginTop: '2%' }}
         onClick={handleSubmit}
       >
-        Erstellen
+        Weiter
       </Button>
     </Form>
   );

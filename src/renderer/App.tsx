@@ -2,11 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavbarController from "../components/NavbarController";
 import Profile from "pages/Profile";
 import RegisterSuccess from "pages/RegisterSuccess";
-import Customer from "pages/Customer";
-import CreateCustomer from "pages/CreateCustomer";
+import Customer from "pages/customer/Customer";
+import CreateCustomer from "pages/customer/CreateCustomer";
 import Login from "pages/Login";
 import Register from "pages/Register";
-import NewCustomerSuccess from "pages/NewCustomerSuccess";
+import NewCustomerSuccess from "pages/customer/NewCustomerSuccess";
+import CustomerView from "pages/customer/CustomerView";
+import CarDetailedView from "pages/car/CarDetailedVIew";
 
 
 
@@ -15,8 +17,10 @@ import NewCustomerSuccess from "pages/NewCustomerSuccess";
 export default function App() {
   return (
     <BrowserRouter>
+    <div style={{backgroundColor:"#F4F5F51A"}}>
+
     <NavbarController/>
-      <div style={{ marginLeft: "5%", marginRight: "5%", marginTop: "3%" }}>
+      <div style={{marginLeft: "270px", marginTop: "3%", backgroundColor:"#F4F5F51A" }}>
         <Routes>
           <Route path="/" element={<Profile />}/>
           <Route path="/registerSuccess" element={<RegisterSuccess />} />
@@ -25,8 +29,13 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/customer/create/success" element={<NewCustomerSuccess/>}/>
+          <Route path="/customer/view" element={<CustomerView/>}/>
+          <Route path="/car/view" element={<CarDetailedView/>}/>
+
         </Routes>
       </div>
+      </div>
+
   </BrowserRouter>
   );
 }

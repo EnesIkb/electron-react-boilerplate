@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Tab, TabBar } from 'react-smart-tabs';
 import 'react-smart-tabs/dist/bundle.css';
+import { Typography } from "@mui/material";
 
 
 
@@ -53,8 +54,9 @@ const Profile = () => {
 
   return (
     <div >
-      sa
-
+   <Typography>
+    sadsasadsasadsasadsasadsasadsasadsasadsasadsasadsasadsasadsa
+   </Typography>
     </div>
   );
 };
